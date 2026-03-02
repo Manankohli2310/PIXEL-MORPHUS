@@ -198,12 +198,7 @@ h2 {
 @media (max-width: 480px) {
     .landing-container {
         gap: 20px;
-        padding: 50px 5% 40px;
-    }
-
-    .logo-section svg {
-        width: 70px;
-        height: 70px;
+        padding: 30px 5% 40px;
     }
 
     .modal-content {

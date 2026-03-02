@@ -490,11 +490,6 @@
         font-size: 2.1rem;
     }
 
-    /* Header and navigation */
-    .logo {
-        font-size: 1.8rem;
-    }
-
     .hamburger {
         width: 30px;
         height: 30px;
@@ -535,5 +530,14 @@
     /* Contact */
     .contact-section p {
         font-size: 1.0rem;
+    }
+}
+
+@media (max-width:450px){
+    .main-nav{
+        padding: 0 1.5rem;
+    }
+    .logo{
+        font-size: 1.5rem;
     }
 }

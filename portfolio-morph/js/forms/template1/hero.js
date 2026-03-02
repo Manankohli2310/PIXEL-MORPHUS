@@ -43,7 +43,7 @@ function buildTemplate1HeroForm(formContainer, data, previewDoc) {
 
     // Create the input fields using the reliable data object.
     content.appendChild(
-        createInputField('Website Name (Navbar & Title)', 'navigation.logoText', data.navigation.logoText, 'text', { wordLimit: 4 })
+        createInputField('Website Name (Navbar & Title)', 'navigation.logoText', data.navigation.logoText, 'text', { wordLimit: 3 })
     );
     
     content.appendChild(
