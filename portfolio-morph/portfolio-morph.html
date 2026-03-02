@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Morph - Select Template</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <!-- This header will be correctly populated by portfolio.js -->
+    </header>
+
+    <div class="page-header">
+        <h1>Choose Your Template</h1>
+        <p>Select a style to begin building your perfect portfolio.</p>
+    </div>
+    <div class="theme-selector-container">
+        <div class="toggle-group" id="global-theme-controls">
+            <button class="control-btn" data-theme="light">Light</button>
+            <button class="control-btn" data-theme="dark">Dark</button>
+        </div>
+    </div>
+    <main class="containers">
+    <div class="template-grid">
+        <!-- Template 1 - Functional Card -->
+        <div class="template-card" data-template-id="template1">
+            <div class="card-preview-container">
+                <!-- THE IFRAME IS GONE. It is replaced by two images. -->
+                <img src="assets/images/previews/template1-light.png" class="card-preview-image" data-theme-img="light" alt="Modern Minimalist Light Theme">
+                <img src="assets/images/previews/template1-dark.png" class="card-preview-image" data-theme-img="dark" alt="Modern Minimalist Dark Theme">
+            </div>
+            <div class="template-info">
+                <h3>Modern Minimalist</h3>
+                <p>A clean, elegant, and straightforward design focusing on your projects and skills.</p>
+                <a href="builder.html" class="select-template-btn">Customize</a>
+            </div>
+        </div>
+
+        <!-- "COMING SOON" CARD -->
+        <div class="template-card">
+            <div class="card-preview-container">
+                <div class="card-preview-placeholder">
+                    <span>Coming Soon</span>
+                </div>
+            </div>
+            <div class="template-info">
+                <h3>Creative Bold</h3>
+                <p>A vibrant and visually striking layout perfect for designers and creative professionals.</p>
+                <a class="select-template-btn disabled">Coming Soon</a>
+            </div>
+        </div>
+    </div>
+    </main>
+    <footer><div class="copyright">
+      &copy; Pixel Morph | Manan Kohli. All Rights Reserved.
+    </div></footer>
+    <script src="js/portfolio.js" defer></script>
+</body>
+</html>

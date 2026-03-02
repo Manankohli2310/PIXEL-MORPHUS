@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Sharma | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsiveness.css">
+</head>
+
+<body>
+    <section id="navbar">
+        <header class="header">
+            <div class="container">
+                <nav class="main-nav">
+                    <a href="#hero" class="logo">Personal Portfolio</a>
+                    <ul class="nav-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="mobile-menu" id="mobileMenu">
+                        <ul>
+                            <li id="onclick"><a href="#about" onclick="closeMenu()">About</a></li>
+                            <li id="onclick"><a href="#experience" onclick="closeMenu()">Experience</a></li>
+                            <li id="onclick"><a href="#projects" onclick="closeMenu()">Projects</a></li>
+                            <li id="onclick"><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+    </section>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container hero-content">
+            <!-- <button id="themeToggleBtn">Toggle Theme</button> -->
+            <div class="hero-text">
+                <h1>Hi, I'm Kunal Sharma</h1>
+                <p class="subtitle">A Creative Web Developer focused on building beautiful and functional websites.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    <a href="your-resume.pdf" class="btn btn-secondary" download>Download Resume <i
+                            class="fas fa-download"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="profile.jpg" alt="Profile photo of John Doe">
+            </div>
+        </div>
+    </section>
+
+    <hr id="about">
+    <!-- About Section -->
+    <section id="about1" class="about-section">
+        <div class="container">
+            <h2 class="section-title about">About Me</h2>
+            <p>I am a professional Web Developer specializing in building responsive, high-performance, and visually
+                engaging web applications. With a strong foundation in front-end technologies, I focus on clean code,
+                seamless user experience, and modern design practices. I am committed to continuous learning and
+                delivering reliable digital solutions that create real impact.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title skills">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
+                <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+                <div class="skill-item"><i class="fab fa-js-square"></i> JavaScript</div>
+                <div class="skill-item"><i class="fab fa-react"></i> React</div>
+                <div class="skill-item"><i class="fab fa-node-js"></i> Node.js</div>
+                <div class="skill-item"><i class="fab fa-figma"></i> Figma</div>
+                <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
+                <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
+            </div>
+        </div>
+    </section>
+
+    <hr id="experience">
+    <!-- Work Experience Section -->
+    <section id="experience1" class="experience-section">
+        <div class="container">
+            <h2 class="section-title experience">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Front-End Developer</h3>
+                        <p class="company">TechNova Solutions | 2022 - Present</p>
+                        <ul>
+                            <li>Developed and maintained responsive web applications using React and modern CSS frameworks.</li>
+                            <li>Collaborated with UI/UX designers to translate wireframes into clean, scalable code.</li>
+                            <li>Improved website performance, achieving a 20% reduction in load times.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Full-Stack Developer</h3>
+                        <p class="company">Digital Sphere Pvt. Ltd. | 2021 - 2022</p>
+                        <ul>
+                            <li>Implemented RESTful APIs and integrated third-party services.</li>
+                            <li>Managed database architecture and optimized queries for better performance.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Web Developer</h3>
+                        <p class="company">Creative Web Agency | 2020 - 2021</p>
+                        <ul>
+                            <li>Built responsive client websites using HTML, CSS, JavaScript, and Bootstrap.</li>
+                            <li>Customized WordPress themes and plugins based on client requirements.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>UI Developer</h3>
+                        <p class="company">PixelCraft Studio | 2019 - 2020</p>
+                        <ul>
+                            <li>Assisted in building websites for various clients using HTML, CSS, and jQuery.</li>
+                            <li>Converted Figma and Adobe XD designs into interactive web interfaces.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Junior Web Developer</h3>
+                        <p class="company">Innovatech Labs | 2018 - 2019</p>
+                        <ul>
+                            <li>Assisted in developing websites and landing pages for various projects.</li>
+                            <li>Performed debugging and troubleshooting to fix front-end issues.</li>
+                            <li>Implemented responsive layouts using CSS Flexbox and Grid.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Web Development Intern</h3>
+                        <p class="company">CodeBridge Technologies | 2017 - 2018</p>
+                        <ul>
+                            <li>Supported senior developers in building and testing web applications.</li>
+                            <li>Conducted browser testing and optimized page load performance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr id="projects">
+    <!-- Projects Section -->
+    <section id="projects1" class="projects-section">
+        <div class="container">
+            <h2 class="section-title projects">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="Project 1 Screenshot">
+                    <h3>E-Commerce Web Application</h3>
+                    <p>A responsive online store with product listing, cart functionality, and secure user authentication.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Project 2 Screenshot">
+                    <h3>Task Management App</h3>
+                    <p>A productivity web app that allows users to create, manage, and track daily tasks efficiently.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project3.jpg" alt="Project 2 Screenshot">
+                    <h3>Weather Forecast App</h3>
+                    <p>A real-time weather application that fetches and displays live data using a public API.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project4.jpg" alt="Project 2 Screenshot">
+                    <h3>Blogging Platform</h3>
+                    <p>A dynamic blog website where users can create, edit, and publish articles.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project5.jpg" alt="Project 2 Screenshot">
+                    <h3>Business Landing Page</h3>
+                    <p>A high-converting responsive landing page designed for startups and businesses.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project6.jpg" alt="Project 3 Screenshot">
+                    <h3>Translator App</h3>
+                    <p>A real-time Translator application enabling instant messaging between users.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr id="contact">
+    <!-- Contact Section -->
+    <section id="contact1" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>I'm currently open to new opportunities. If you have a project in mind or just want to say hi, feel
+                free to reach out!</p>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:you@example.com">you@example.com</a></p>
+                <p><i class="fas fa-phone"></i> Phone: <a href="tel:+911234567890">+91 12345 67890</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Location: New Delhi, India</p>
+            </div>
+            <div class="social-links">
+                <h2>Connect With Me</h2>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <a href="mailto:your.email@example.com" class="btn btn-primary">Say Hello</a>
+        </div>
+    </section>
+    </main>
+    <section class="footerpadding">
+        <footer id="footer" class="footer">
+            <div class="container">
+                <p>© 2026 Kunal Sharma. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </section>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Builder</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/builder.css">
+    <link rel="stylesheet" href="css/forms/template1/common.css">
+    <link rel="stylesheet" href="css/forms/template1/skills.css">
+    <link rel="stylesheet" href="css/forms/template1/experience.css">
+    <link rel="stylesheet" href="css/forms/template1/projects.css">
+    <link rel="stylesheet" href="css/forms/template1/contact.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header builder-header">
+        <!-- Header content here -->
+    </header>
+
+    <main class="main-preview-container">
+        <iframe id="main-preview-frame" title="Live Portfolio Preview"></iframe>
+    </main>
+
+    <div class="fab-group">
+        <div id="download-fab-container" class="fab-container hidden">
+            <button id="download-code-btn" class="fab-main-btn" title="Download Code">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Download Code</span>
+            </button>
+        </div>
+        <div id="edit-fab-container" class="fab-container">
+            <button id="edit-panel-btn" class="fab-main-btn" title="Open Editor">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                <span>Edit</span>
+            </button>
+        </div>
+    </div>
+
+    <aside id="editing-panel">
+        <div class="panel-header">
+            <h3>Editor</h3>
+            <button id="close-panel-btn" title="Close Editor">&times;</button>
+        </div>
+        <div class="panel-content">
+
+            <!-- ================== START: SECTION REMOVED ================== -->
+            <!-- The entire mini-preview-wrapper div has been deleted from here -->
+            <!-- =================== END: SECTION REMOVED =================== -->
+
+            <div class="preview-controls">
+                <p class="panel-label">One Template Full Control.</p>
+                <div class="toggle-group" id="panel-theme-controls">
+                    <button class="control-btn" data-theme="light">Light</button>
+                    <button class="control-btn" data-theme="dark">Dark</button>
+                </div>
+            </div>
+            <div id="form-controls">
+                <div class="form-placeholder">Your form will appear here.</div>
+            </div>
+            <div id="submit-button-container">
+                <button id="submit-btn">Download Code</button>
+            </div>
+        </div>
+    </aside>
+    
+    <div id="panel-backdrop"></div>
+
+    <div id="download-overlay" class="hidden">
+        <div id="download-popup">
+            <button id="close-popup-btn" title="Close">&times;</button>
+            <div class="popup-content" id="popup-loading-state">
+                <div class="spinner"></div>
+                <div id="loading-messages">
+                    <p class="loading-message">Implementing your changes...</p>
+                    <p class="loading-message">Building your custom HTML...</p>
+                    <p class="loading-message">Zipping up your files...</p>
+                    <p class="loading-message">Almost there!</p>
+                </div>
+            </div>
+            <div class="popup-content hidden" id="popup-ready-state">
+                <div class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+                </div>
+                <h2>Your Portfolio is Ready!</h2>
+                <p>Your personalized website has been generated successfully.</p>
+                <a href="#" id="final-download-link" class="final-download-btn" download="portfolio.zip">Download Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script type="module" src="js/builder.js"></script>
+</body>
+</html>

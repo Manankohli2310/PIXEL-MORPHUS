@@ -1,0 +1,543 @@
+/* --- GLOBAL LAYOUT --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f2f5;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #7070703f;
+}
+.panel-content::-webkit-scrollbar {
+    width: 8px;
+}
+.panel-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+.panel-content::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 4px;
+    border: 3px solid #fff;
+    background-clip: content-box;
+}
+.panel-content::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+.panel-content {
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db #fff;
+}
+
+
+/* --- HEADER --- */
+.builder-header {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 100;
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+/* --- MAIN PREVIEW --- */
+.main-preview-container {
+    flex-grow: 1;
+    padding: 20px;
+    min-height: 0; /* allow shrinking in flex column */
+    box-sizing: border-box;
+    /* On mobile, editing panel is a drawer so preview still shows */
+    transition: padding-left 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#main-preview-frame {
+    width: 100%;
+    height: 100%;
+    min-height: 800px;
+    border: none;
+    margin-bottom: 30px;
+    background-color: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+/* --- SLIDE-IN EDITING PANEL --- */
+#editing-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: clamp(300px, 40vw, 450px);
+    height: 100%;
+    background: linear-gradient(to bottom, #ffffff, #f9fafb);
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#editing-panel.visible {
+    transform: translateX(0);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.panel-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#close-panel-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #b68080;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.panel-content {
+    padding: 30px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+
+
+
+
+/* --- DOWNLOAD FEATURE STYLES --- */
+.hidden {
+    display: none !important;
+}
+
+/* FAB Group — horizontal row, bottom-left */
+.fab-group {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    right: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    z-index: 998;
+}
+
+.fab-container {
+    position: relative;
+}
+
+.fab-main-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    min-width: 120px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    padding: 0 20px;
+}
+
+.fab-main-btn:hover {
+    transform: scale(1.05);
+}
+
+#download-btn {
+    background-color: #00aee3;
+}
+
+/* Dropdown Menu */
+.fab-dropdown {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    width: 220px;
+    opacity: 0;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s 0.2s;
+}
+
+.fab-dropdown.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s 0s;
+}
+
+.fab-dropdown a {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.fab-dropdown a:hover {
+    background-color: #f6f8fa;
+}
+
+.fab-dropdown a.disabled {
+    color: #aaa;
+    cursor: not-allowed;
+    background-color: #f9f9f9;
+}
+
+/* Submit Button in Panel */
+#submit-button-container {
+    padding: 25px 30px 20px 30px;
+    margin: 20px -30px -30px -30px;
+    border-top: 1px solid var(--border-color);
+    background-color: #f9fafb;
+}
+
+#submit-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#submit-btn:hover {
+    background-color: #00c9ed;
+}
+
+
+/* Download Overlay and Popup */
+#download-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+#download-overlay:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+#download-popup {
+    background-color: white;
+    padding: clamp(24px, 5vw, 40px);
+    border-radius: 12px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+#download-overlay:not(.hidden) #download-popup {
+    transform: scale(1);
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Loading State */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-messages {
+    position: relative;
+    height: 55px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    overflow: hidden;
+    width: 100%;
+}
+
+.loading-message {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.loading-message.visible {
+    opacity: 1;
+}
+
+#close-popup-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+#close-popup-btn:hover {
+    color: #333;
+}
+
+/* Ready State */
+.success-icon svg {
+    width: 60px;
+    height: 60px;
+    color: #00aee3;
+}
+
+#popup-ready-state h2 {
+    margin: 15px 0 5px 0;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+#popup-ready-state p {
+    margin: 0 0 25px 0;
+    color: #666;
+}
+
+.final-download-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #00aee3;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(40, 163, 167, 0.4);
+}
+
+.final-download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(40, 159, 167, 0.5);
+}
+
+
+/* ─── RESPONSIVE BREAKPOINTS ─── */
+
+/* Tablet: panel narrows, preview shrinks */
+@media (max-width: 900px) {
+    #editing-panel {
+        width: clamp(280px, 55vw, 360px);
+    }
+
+    .panel-content {
+        padding: 20px;
+    }
+
+    #submit-button-container {
+        padding: 20px;
+        margin: 20px -20px -20px -20px;
+    }
+
+    .panel-header {
+        padding: 12px 20px;
+    }
+}
+
+/* Mobile: panel becomes a full-width bottom sheet OR full-screen drawer */
+@media (max-width: 600px) {
+    /* Panel slides up from bottom on mobile */
+    #editing-panel {
+        width: 100%;
+        height: 85dvh;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.15);
+        transform: translateY(100%); /* slide from bottom */
+        transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    #editing-panel.visible {
+        transform: translateY(0);
+    }
+
+    /* Drag handle for bottom sheet feel */
+    .panel-header::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 4px;
+        background: #d1d5db;
+        border-radius: 2px;
+    }
+
+    .panel-header {
+        position: relative;
+        padding: 20px 20px 14px;
+        justify-content: space-between;
+    }
+
+    .panel-content {
+        padding: 16px 20px;
+    }
+
+    #submit-button-container {
+        padding: 16px 20px;
+        margin: 16px -20px -16px -20px;
+    }
+
+    /* Preview stays visible behind the panel */
+    .main-preview-container {
+        padding: 12px;
+        /* Reserve space so content isn't fully hidden under panel */
+        padding-bottom: calc(85dvh + 12px);
+    }
+
+    /* FABs stay bottom-left on mobile */
+    .fab-group {
+        bottom: 16px;
+        left: 16px;
+        right: auto;
+    }
+
+    /* FAB buttons slightly smaller on mobile */
+    .fab-main-btn {
+        min-width: 44px;
+        height: 44px;
+        font-size: 0.9rem;
+        padding: 0 16px;
+    }
+
+    /* Dropdown opens upward, always visible */
+    .fab-dropdown {
+        width: min(220px, 80vw);
+        right: 0;
+    }
+
+    /* Mini preview smaller on mobile */
+    .mini-preview-wrapper {
+        margin-bottom: 20px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .panel-header h3 {
+        font-size: 1rem;
+    }
+
+    .fab-main-btn {
+        min-width: 40px;
+        padding: 0 12px;
+        font-size: 0.85rem;
+    }
+
+    .panel-content {
+        padding: 12px 16px;
+    }
+}
+
+/* Landscape mobile: keep panel as side drawer, limited height */
+@media (max-width: 600px) and (orientation: landscape) {
+    #editing-panel {
+        width: 55vw;
+        height: 100%;
+        top: 0;
+        bottom: auto;
+        border-radius: 0;
+        transform: translateX(-100%);
+    }
+
+    #editing-panel.visible {
+        transform: translateX(0);
+    }
+
+    .panel-header::before {
+        display: none;
+    }
+
+    .main-preview-container {
+        padding: 10px;
+        padding-bottom: 10px;
+    }
+
+    .fab-group {
+        bottom: 16px;
+        right: 16px;
+    }
+}

@@ -1,0 +1,381 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-bg: #fdfdff;
+    --card-bg: #ffffff;
+    --text-primary: #202b2c;
+    --text-secondary: #5a6474;
+    --accent-color: #00aee3;
+    --accent-hover: #00c9ed;
+    --border-color: #e1e1e6;
+    --shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    font-family: sans-serif;
+    -webkit-tap-highlight-color: rgba(32, 110, 77, 0) !important;
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+}
+body::-webkit-scrollbar {
+    width: 5px;               
+  }
+  
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.089);        
+  }
+  
+ body::-webkit-scrollbar-thumb {
+    padding: 2px;
+    background-color: rgba(161, 161, 161, 0.603);   
+    border-radius: 20px;       
+}
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px;
+}
+
+/* --- Main Header Styles --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 15px 25px;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.site-title span {
+    color: var(--accent-color);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #00aee3;
+}
+
+.welcome-message {
+    font-weight: 500;
+}
+
+#user-name {
+    font-weight: 700;
+}
+
+.logout-button {
+    background: none;
+    border: 1px solid #00aee3;
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+    background-color: #00c9ed ;
+    color: white;
+}
+
+.login-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.login-button:hover {
+    background-color: var(--accent-hover);
+}
+
+/* --- Page Header Styles --- */
+.page-header {
+    text-align: center;
+    margin: 30px 0 20px 0;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.page-header p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+/* --- Global Theme Selector --- */
+.theme-selector-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.theme-selector-container .toggle-group {
+    background-color: var(--card-bg);
+    padding: 6px;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    border: 1px solid var(--border-color);
+}
+
+.theme-selector-container .control-btn {
+    padding: 7px 20px;
+    border: none;
+    border-radius: 50px;
+    background: rgb(231, 237, 241);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.theme-selector-container .control-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 163, 227, 0.3);
+}
+
+/* --- Flexbox Template Grid --- */
+.template-grid {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+}
+
+/* --- Template Card --- */
+.template-card {
+    background-color: var(--card-bg);
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 370px;
+}
+
+.template-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* --- Card Info --- */
+.template-info {
+    padding: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.template-info h3 {
+    margin: 0 0 6px 0;
+    font-size: 1rem;
+}
+
+.template-info p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.select-template-btn {
+    display: block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 9px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.select-template-btn:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.03);
+}
+
+/* --- Coming Soon Styles --- */
+.card-preview-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    color: #ccc;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.select-template-btn.disabled {
+    background-color: #e9ecef;
+    color: #adb5bd;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.select-template-btn.disabled:hover {
+    background-color: #e9ecef;
+    transform: none;
+}
+
+/* ================== START: IMAGE PREVIEW FIX ================== */
+
+/* --- Card Preview Container (Container for both iframe and image) --- */
+.card-preview-container {
+    position: relative;
+    width: 100%;
+    height: 185px; /* This height is from your original code, we keep it */
+    background-color: #f0f2f5;
+    overflow: hidden;
+}
+
+/* This is the old iframe rule, we leave it but it won't be used by the image card */
+.card-preview-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: top left;
+    border: none;
+    pointer-events: none;
+}
+
+/* These are the NEW rules for the image previews */
+.card-preview-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* THE FIX: Use 'contain' instead of 'cover'. This guarantees the whole image is visible. */
+    object-fit: contain; 
+    
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.card-preview-image.active {
+    background-color: white;
+    opacity: 1; /* Make the active image visible */
+}
+
+/* =================== END: IMAGE PREVIEW FIX =================== */
+
+footer {
+      height: 80px;
+      background-color: #24242400;
+      color: rgba(22, 22, 22, 0.726);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      font-family: Arial, sans-serif;
+      position: relative; 
+  }
+
+  .copyright {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 15px;
+      white-space: nowrap;
+  }
+
+main{
+    padding-left: 80px;
+    padding-right: 80px;
+}
+@media (max-width: 870px) and (min-width:600px){
+    .template-card{
+        width: 390px;
+        height: 410px;
+    }
+    
+.card-preview-container{
+    height: 210px;
+}
+}
+@media (max-width: 500px) and (min-width:400px){
+    
+main {
+    padding-left: 40px;
+    padding-right: 40px;
+    }
+.template-card{
+        /* width: 390px; */
+        height: 410px;
+    }
+    .card-preview-container{
+    height: 210px;
+}
+.page-header{
+        margin: 30px 10px 20px 10px;
+}
+}
+@media (max-width: 400px) {
+.main-header{
+    padding: 15px 17px;
+}    
+main {
+    padding-left: 40px;
+    padding-right: 40px;
+    }
+.template-card{
+        height: 390px;
+    }
+    .card-preview-container{
+    height: 190px;
+}
+.page-header{
+        margin: 40px 10px 20px 10px;
+}
+.page-header h1 {
+    font-size: 1.5rem;
+    font-weight: 1000;
+    }
+}

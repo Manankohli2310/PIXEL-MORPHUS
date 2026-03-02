@@ -1,0 +1,79 @@
+/* --- EXPERIENCE-SPECIFIC STYLES --- */
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.experience-item-form {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+}
+
+.experience-item-form .form-group {
+    margin-bottom: 15px;
+}
+
+/* Style for the delete button on each experience item */
+.delete-experience-item-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #a0aec0;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.delete-experience-item-btn:hover {
+    color: #e53e3e;
+}
+
+/* Styles for the date range inputs */
+.date-range-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.date-range-group .form-group {
+    flex: 1;
+}
+
+/* Styles for the 'Present' checkbox */
+.present-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 20px; /* Align with the input fields above it */
+}
+.present-checkbox-group label {
+    margin-bottom: 0; /* Override default margin */
+    font-weight: 500;
+}
+.present-checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+/* --- NEW STYLES for Achievement/Point List --- */
+.point-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.point-item-form {
+    display: flex;
+    align-items:center;
+    gap: 10px;
+}
+
+.point-item-form input {
+    flex-grow: 1;
+    width: 0; /* Flexbox shrink fix */
+}

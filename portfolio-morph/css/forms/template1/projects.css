@@ -1,0 +1,35 @@
+/* --- PROJECTS-SPECIFIC STYLES --- */
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-item-form {
+    /* background-color: #f8f9fa; */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+}
+
+.project-item-form .form-group {
+    margin-bottom: 15px;
+}
+
+/* Style for the delete button on each project item */
+.delete-project-item-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #a0aec0;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.delete-project-item-btn:hover {
+    color: #e53e3e;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelMorphus - Welcome</title>
+    
+    <link rel="stylesheet" href="css/login.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Main Landing Page Content -->
+    <main class="landing-container">
+        <div class="intro-section">
+            <h1 class="intro-title">PixelMorphus</h1>
+            <p class="intro-subtitle">Your all-in-one workspace for building, creating, and sharing your best work.</p>
+            <button id="get-started-btn" class="get-started-button">Get Started</button>
+        </div>
+        <div class="logo-section">
+            <!-- A simple, clean SVG logo. You can replace this with your own <img> tag if you have a logo file. -->
+            <svg width="150" height="150" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </main>
+
+    <!-- Login Modal (Initially Hidden) -->
+    <div id="login-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2>Join Now</h2>
+            <p>Sign in to begin your creative journey.</p>
+            
+            <!-- Google Sign-In elements are now inside the modal -->
+            <div id="google-button-container">
+                <script src="https://accounts.google.com/gsi/client" async defer></script>
+                <div id="g_id_onload"
+                     data-client_id="106449844442-9796dsgtv9v82peutu71hner689le9f4.apps.googleusercontent.com"
+                     data-context="signin"
+                     data-ux_mode="popup"
+                     data-callback="handleCredentialResponse"
+                     data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin"
+                     data-type="standard"
+                     data-shape="rectangular"
+                     data-theme="outline"
+                     data-text="continue_with"
+                     data-size="large"
+                     data-logo_alignment="left"
+                     data-width="250"> <!-- Set a fixed width for a bigger button feel -->
+                </div>
+            </div>
+
+            <a href="index.html" class="skip-link-modal">Skip for now</a>
+        </div>
+    </div>
+
+    <script src="js/auth.js" defer></script>
+
+</body>
+</html>
